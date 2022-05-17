@@ -1,0 +1,2 @@
+# be-set-to-a-default-value
+$iHeight = _GDIPlus_ImageGetHeight($hImage) $Reslt = _GDIPlus_BitmapLockBits($hImage, 0, 0, $iWidth, $iHeight, $GDIP_ILMREAD, $GDIP_PXF32ARGB) $Scan0 = DllStructGetData($Reslt, "Scan0") $pOldBitmap = _SDL_CreateRGBSurfaceFrom($Scan0, $iWidth, $iHeight, 32, $iWidth * 4, 0, 0, 0, 0) $pNewSurface = _SDL_CreateRGBSurface($_SDL_SWSURFACE, $iWidth, $iHeight, 32, 0, 0, 0, 0)   ;If you set 0 for $iRmask, $iGmask, $iBmask it will be set to a default value  _SDL_SetColorKey($pNewSurface, $_SDL_SRCCOLORKEY, 0)
